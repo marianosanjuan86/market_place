@@ -1,0 +1,45 @@
+body{
+    margin: 10px;
+}
+
+ /* Seccion titulo LOGO */
+
+.section_title {
+    text-align: center;
+}
+
+
+.logo {
+    width: 40vw; 
+    height: auto; 
+    margin-top: 5em;
+}
+
+ /* Seccion NAV BAR */
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+nav div{
+    margin: 10px;
+}
+nav h2{
+    font-size: 40px;
+}
+
+ /* Seccion FOOTER */
+
+ footer{
+    display: flex;
+    justify-content: space-around;
+ }
+
+ footer a {
+    margin: 0px 10px;
+ }
+.img_footer{
+    width: 1.5rem;
+    height: 1.5rem;
+}
