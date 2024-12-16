@@ -27,6 +27,19 @@
             <a href="#"><h2>Accesorios</h2></a>
         </div>
     </nav>
+
+    <div class="carrusel">
+        <div class="imagenes">
+            <img src="./images/carrusel/galeria-1.webp" alt="Promocion descuento">
+            <img src="./images/carrusel/galeria-2.webp" alt="Promocion envio">
+            <img src="./images/carrusel/galeria-3.webp" alt="Promocion software">
+            <img src="./images/carrusel/galeria-4.webp" alt="Promocion software">
+        </div>
+        <button class="boton izquierda" onclick="anterior()">&#10094;</button>
+        <button class="boton derecha" onclick="siguiente()">&#10095;</button>
+    </div>
+
+
     <div style="text-align: center;">
         <h2 class="title_ofertas">OFERTAS</h2>
     </div>
@@ -34,35 +47,50 @@
     <section class="ofertas">
         <ul>
             <li>
-                <img src="./images/53536_0_miin.jpg" alt="">
+                <img src="./images/ofertas/8L708UA-ABA_002-300x300.webp" alt="">
                 <div>
-                    <span>Notebook</span>
-                    <span>$450000</span>
+                    <span class="descripcion-product">Notebook Hp Pavilion 16 Core I7 155u 16gb Ssd 512gb</span>
+                    <span class="price">$450.000</span>
+                    <a href="" class="boton_carrito">COMPRAR</a>
                 </div>
             </li>
             <li>
-                <img src="./images/oferta_1.webp" alt="">
+                <img src="./images/ofertas/A1WC3UAABA-Hp-255-G10_01-300x300.webp" alt="">
                 <div>
-                    <span>Notebook</span>
-                    <span>$450000</span>
+                    <span class="descripcion-product">Notebook Samsung 15.6 Core i7 150u 16gb Ssd 512gb</span>
+                    <span class="price">$450.000</span>
+                    <a href="" class="boton_carrito">COMPRAR</a>
                 </div>
             </li>
             <li>
-                <img src="./images/74865a124c900055df8d11f00637c86d.jpg" alt="">
+                <img src="./images/ofertas/A3SP2UAABA-HP-PAVILION-16-AF0945_01-300x300.webp" alt="">
                 <div>
-                    <span>Notebook</span>
-                    <span>$450000</span>
+                    <span class="descripcion-product">Notebook Hp 255 G10 15.6 Ryzen 7 7730u 16gb Ssd 512gb  W11</span>
+                    <span class="price">$450.000</span>
+                    <a href="" class="boton_carrito">COMPRAR</a>
                 </div>
             </li>
             <li>
-                <img src="./images/5d150286dc.webp" alt="">
+                <img src="./images/ofertas/NP750XGK-KS2US-Galaxy-Book4_01-300x300.webp" alt="">
                 <div>
-                    <span>Notebook</span>
-                    <span>$450000</span>
+                    <span class="descripcion-product">Notebook Hp 15.6 Core I7 1255u 16gb Ssd 512gb W11</span>
+                    <span class="price">$450.000</span>
+                    <a href="" class="boton_carrito">COMPRAR</a>
                 </div>
             </li>
         </ul>
         
+    </section>
+
+    <section>
+        <div class="section_categories">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
     </section>
 
     <form action="/submit" method="POST">
@@ -97,4 +125,24 @@
 
     <nav></nav>
 </body>
+<script>
+    const imagenes = document.querySelector('.imagenes');
+    const totalImagenes = document.querySelectorAll('.imagenes img').length;
+    let indiceActual = 0;
+
+    function actualizarCarrusel() {
+        const desplazamiento = -indiceActual * 100;
+        imagenes.style.transform = `translateX(${desplazamiento}%)`;
+    }
+
+    function siguiente() {
+        indiceActual = (indiceActual + 1) % totalImagenes;
+        actualizarCarrusel();
+    }
+
+    function anterior() {
+        indiceActual = (indiceActual - 1 + totalImagenes) % totalImagenes;
+        actualizarCarrusel();
+    }
+</script>
 </html>

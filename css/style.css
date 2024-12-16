@@ -3,6 +3,33 @@ body{
 
 }
 
+.descripcion-product{
+    display: block;
+    color: #444444;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.price{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    padding: 2%;
+    color: #0056b3;
+    background-color: #ccc;
+}
+
+.boton_carrito{
+    color: #f9f9f9;
+    background-color: #000000;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
  /* Seccion titulo LOGO */
 
 .section_title {
@@ -21,6 +48,9 @@ body{
 nav{
     display: flex;
     justify-content: center;
+    background-color: beige;
+    margin: auto;
+    margin-top: 3.2rem;
 }
 
 nav div{
@@ -38,6 +68,53 @@ nav h2{
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings:"ROND" 0;
+}
+
+/* Seccion carrusel*/
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 3.2rem;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imagenes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.imagenes img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.boton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.boton:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.boton.izquierda {
+    left: 10px;
+}
+
+.boton.derecha {
+    right: 10px;
 }
 
 /* Seccion ofertas */
@@ -64,7 +141,7 @@ nav h2{
     padding: 10px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
-    width: 150px; 
+    width: 20%; 
 }
 
 .ofertas ul li img{
@@ -72,6 +149,19 @@ nav h2{
     height: auto;
     border-radius: 5px;
 }
+
+/* Seccion muestra categorias */
+
+.section_categories{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50%;
+    gap: 20px;
+    justify-items: center;
+}
+
+
+
 
 /* Seccion Formulario */
 
@@ -81,7 +171,7 @@ form {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 40%;
     margin: auto;
 }
 
@@ -123,7 +213,7 @@ input {
     background-color: #0056b3;
 }
 
- 
+/* Seccion Footer */
 
  footer{
     display: flex;
