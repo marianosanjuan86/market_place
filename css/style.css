@@ -152,14 +152,42 @@ nav h2{
 
 /* Seccion muestra categorias */
 
-.section_categories{
+.section_categories {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50%;
-    gap: 20px;
-    justify-items: center;
+    grid-template-columns: 1fr 2fr 1fr; /* Tres columnas iguales */
+    grid-template-rows: 1fr 1fr; /* Dos filas */
+    grid-template-areas: 
+        "col1 col2 col3"
+        "col4 col2 col5";
+    gap: 10px; /* Espaciado entre elementos */
+    height: 500px;
+    background-color: #000000;
 }
 
+.item1 {
+    grid-area: col1;
+}
+.item2 {
+    grid-area: col2;
+}
+.item3 {
+    grid-area: col3;
+}
+.item4 {
+    grid-row: 2; 
+    grid-column: 1;
+}
+.item5 {
+    grid-row: 2; 
+    grid-column: 3;
+}
+
+.item img {
+    width: 100%; /* Las imágenes ocuparán todo el ancho del contenedor */
+    height: 100%; /* Las imágenes ocuparán todo el alto del contenedor */
+    object-fit: none; /* Ajusta las imágenes sin deformarlas */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+}
 
 
 
