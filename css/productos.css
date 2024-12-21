@@ -14,38 +14,108 @@ h1 {
 /*seccion productos*/
 
 .contenedor-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    justify-content: center;
 }
 
 .producto {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    padding: 15px;
     text-align: center;
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .producto img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .producto h3 {
+    font-size: 1.1rem;
     margin: 10px 0;
-    font-size: 1.2rem;
 }
 
 .producto p {
-    margin: 10px;
-    color: #555;
+    font-size: 1rem;
+    margin: 5px 0;
 }
 
-.producto:hover {
-    transform: scale(1.05);
+.boton-comprar {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton-comprar:hover {
+    background-color: #0056b3;
+}
+
+
+#carrito-mini {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#toggle-carrito {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#carrito-content {
+    display: block;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: 300px;
+    z-index: 1000;
+}
+
+#carrito-content.oculto {
+    display: none;
+}
+
+#carrito-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#carrito-content li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#vaciar-carrito {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#carrito-lista {
+    display: block;
 }

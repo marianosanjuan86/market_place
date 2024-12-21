@@ -3,64 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/productos.css" rel="stylesheet" href="">
-    <link href="./css/style.css" rel="stylesheet" href="">
+    <link href="./css/productos.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
     <title>Productos Electrónicos</title>
 </head>
 <body>
-    <section class="section_title"></section>
+    <section class="section_title">
         <img class="logo" src="./images/logo.png" alt="Logo">
     </section>
     <nav>
-        <div>
-            <a href="#"><h2>Celulares</h2></a>
-        </div>
-        <div>
-            <a href="#"><h2>Notebook</h2></a>
-        </div>
-        <div>
-            <a href="#"><h2>Consolas</h2></a>
-        </div>
-        <div>
-            <a href="#"><h2>Accesorios</h2></a>
-        </div>
+        <div><a href="#"><h2>Celulares</h2></a></div>
+        <div><a href="#"><h2>Notebook</h2></a></div>
+        <div><a href="#"><h2>Consolas</h2></a></div>
+        <div><a href="#"><h2>Accesorios</h2></a></div>
     </nav>
 
     <h1 class="estilotituloCategoria" id="tituloCategoria">Productos</h1>
     <div class="contenedor-productos" id="contenedorProductos"></div>
 
-    <script>
+    <!-- Carrito pequeño -->
+    <div id="carrito-mini">
+        <button id="toggle-carrito">🛒</button>
+        <div id="carrito-content" class="oculto">
+            <h3>Carrito</h3>
+            <ul id="carrito-lista"></ul>
+            <p>Total: $<span id="total">0</span></p>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+        </div>
+    </div>
 
-        
-        const params = new URLSearchParams(window.location.search);
-        const categoria = params.get('categoria');
-
-        
-        const titulo = document.getElementById('tituloCategoria');
-        titulo.textContent = categoria ? categoria : 'Productos';
-
-        
-        fetch('https://fakestoreapi.com/products/category/electronics')
-            .then(response => response.json())
-            .then(data => {
-                const contenedor = document.getElementById('contenedorProductos');
-
-                
-                data.forEach(producto => {
-                    const divProducto = document.createElement('div');
-                    divProducto.className = 'producto';
-
-                    divProducto.innerHTML = `
-                        <img src="${producto.image}" alt="${producto.title}">
-                        <h3>${producto.title}</h3>
-                        <p>Precio: $${producto.price}</p>
-                        <a href="" class="boton_carrito">COMPRAR</a>
-                    `;
-
-                    contenedor.appendChild(divProducto);
-                });
-            })
-            .catch(error => console.error('Error al cargar los productos:', error));
-    </script>
+<script src="javaScript/productos.js"></script>
 </body>
 </html>
