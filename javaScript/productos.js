@@ -17,7 +17,7 @@ fetch('https://fakestoreapi.com/products/category/electronics')
             contenedor.appendChild(divProducto);
         });
 
-        // Agregar eventos a los botones "Comprar" después de que los productos sean renderizados
+        
         document.querySelectorAll(".boton-comprar").forEach(boton => {
             boton.addEventListener("click", (e) => {
                 const id = e.target.dataset.id;
@@ -32,10 +32,10 @@ fetch('https://fakestoreapi.com/products/category/electronics')
 ;
 
 
-// Array para almacenar los productos en el carrito
+
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Función para agregar un producto al carrito
+
 function agregarAlCarrito(id, nombre, precio) {
     carrito.push({ id, nombre, precio });
     console.log("hola",carrito)
@@ -43,17 +43,17 @@ function agregarAlCarrito(id, nombre, precio) {
     actualizarCarrito();
 }
 
-// Función para actualizar el carrito en la interfaz
+
 function actualizarCarrito() {
     const listaCarrito = document.getElementById("carrito-lista");
     const total = document.getElementById("total");
 
-    // Limpiar la lista antes de agregar los productos
+    
     listaCarrito.innerHTML = '';
 
     let totalCarrito = 0;
 
-    // Recorrer los productos en el carrito y agregarlos a la lista
+    
     carrito.forEach(producto => {
         console.log("Producto:", producto);
         const li = document.createElement("li");
@@ -62,23 +62,23 @@ function actualizarCarrito() {
         totalCarrito += producto.precio;
     });
 
-    // Mostrar el total actualizado
+    
     total.textContent = totalCarrito;
 }
 
-// Función para vaciar el carrito
+
 function vaciarCarrito() {
     carrito = [];
     guardarCarritoEnLocalStorage();
     actualizarCarrito();
 }
 
-// Guardar el carrito en localStorage
+
 function guardarCarritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-// Restaurar el carrito al cargar la página
+
 function cargarCarritoDeLocalStorage() {
     try {
         carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -88,13 +88,13 @@ function cargarCarritoDeLocalStorage() {
     actualizarCarrito();
 }
 
-// Mostrar/ocultar el carrito
+
 document.getElementById('toggle-carrito').addEventListener('click', () => {
     const carritoContent = document.getElementById('carrito-content');
     carritoContent.classList.toggle('oculto');
 });
 
-// Agregar evento a los botones de "Comprar"
+
 document.querySelectorAll(".boton-comprar").forEach(boton => {
     boton.addEventListener("click", (e) => {
         const id = e.target.getAttribute("data-id");
@@ -105,8 +105,8 @@ document.querySelectorAll(".boton-comprar").forEach(boton => {
     });
 });
 
-// Agregar evento para vaciar el carrito
+
 document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
 
-// Cargar el carrito al cargar la página
+
 cargarCarritoDeLocalStorage();
