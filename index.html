@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sur Tech</title>
     <link href="./css/style.css" rel="stylesheet" href="">
+    <link href="./css/productos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
@@ -101,6 +102,7 @@
             </div>
         </div>
     </section>
+    
 
     <form action="/submit" method="POST">
         <div class="form-group">
@@ -117,6 +119,16 @@
         </div>
         <button type="submit" class="btn-submit">Enviar</button>
     </form>
+
+    <div id="carrito-mini"></div>
+        <button id="toggle-carrito">🛒 <span id="carrito-count">0</span></button>
+        <div id="carrito-content" class="oculto">
+            <h3>Carrito</h3>
+            <ul id="carrito-lista"></ul>
+            <p>Total: $<span id="total">0</span></p>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+        </div>
+    </div>
     
 
     <footer>
@@ -132,8 +144,9 @@
         </div>
     </footer>
 
-    <nav></nav>
+    
 </body>
+<script src="javaScript/productos.js"></script>
 <script>
     const imagenes = document.querySelector('.imagenes');
     const totalImagenes = document.querySelectorAll('.imagenes img').length;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="./css/comprar.css"> 
+    <link rel="stylesheet" href="./css/style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Finalizar Compra</h1>
+    </header>
+
+    <main>
+        
+        <section id="resumen-carrito">
+            <h2>Tu Carrito</h2>
+            <ul id="carrito-lista">
+            </ul>
+            <p>Total: $<span id="total-carrito">0</span></p>
+        </section>
+
+        
+        <section id="formulario-compra">
+            <h2>Datos de Facturación</h2>
+            <form id="form-compra">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <button type="submit" class="btn-submit">Confirmar Compra</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a ><img class="img_footer" src="./images/instagram.png" alt=""></a>
+            <a ><img class="img_footer" src="./images/youtube.png" alt=""></a>
+            <a ><img class="img_footer" src="./images/whatsapp.png" alt=""></a>
+        </div>
+        <h5>© 2024 Sur Tech - Todos los derechos Reservados.</h5>
+        <div>
+            <a ><img class="img_footer" src="./images/manzana.png" alt=""> App Store</a>
+            <a ><img class="img_footer" src="./images/google-play.png" alt="">Google play</a>
+        </div>
+    </footer>
+    <script>
+        const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const listaCarrito = document.getElementById("carrito-lista");
+        const totalCarrito = document.getElementById("total-carrito");
+
+        function mostrarCarrito() {
+            let total = 0;
+            carrito.forEach(producto => {
+                const li = document.createElement("li");
+                li.textContent = `${producto.nombre} - $${producto.precio}`;
+                listaCarrito.appendChild(li);
+                total += producto.precio;
+            });
+            totalCarrito.textContent = total.toFixed(2);
+        }
+
+        
+        document.getElementById("form-compra").addEventListener("submit", (e) => {
+            e.preventDefault();
+            alert("¡Gracias por tu compra! Recibirás un correo con los detalles.");
+            localStorage.removeItem("carrito"); 
+            window.location.href = "index.html"; 
+        });
+
+        
+        mostrarCarrito();
+    </script>
+</body>
+</html>

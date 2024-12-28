@@ -38,10 +38,11 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 function agregarAlCarrito(id, nombre, precio) {
     carrito.push({ id, nombre, precio });
-    console.log("hola",carrito)
+    actualizarCarritoCount()
     guardarCarritoEnLocalStorage();
     actualizarCarrito();
 }
+
 
 
 function actualizarCarrito() {
@@ -110,3 +111,15 @@ document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrit
 
 
 cargarCarritoDeLocalStorage();
+
+
+function actualizarCarritoCount() {
+    const carritoCount = document.getElementById("carrito-count");
+    carritoCount.textContent = carrito.length; 
+}
+
+const btnComprar = document.getElementById("btn-comprar");
+
+btnComprar.addEventListener("click", () => {
+    window.location.href = "comprar.html";
+});

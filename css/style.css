@@ -206,6 +206,7 @@ form {
     width: 100%;
     max-width: 40%;
     margin: auto;
+    margin-top: 50px;
 }
 
 
@@ -245,6 +246,8 @@ input {
 .btn-submit:hover {
     background-color: #0056b3;
 }
+
+
 
 /* Seccion Footer */
 
