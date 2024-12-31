@@ -151,50 +151,108 @@ nav h2{
 }
 
 /* Seccion muestra categorias */
-
+/* Sección de categorías */
 .section_categories {
+    background-color: #000;  
+    color: white;  
+    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; 
-    grid-template-rows: 1fr 1fr; 
-    grid-template-areas: 
-        "col1 col2 col3"
-        "col4 col2 col5";
-    gap: 10px; 
-    height: 500px;
-    background-color: #000000;
+    gap: 15px;
+    grid-template-columns: 1fr 2fr 1fr;  
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
-.item1 {
-    grid-area: col1;
-}
-.item2 {
-    grid-area: col2;
-}
-.item3 {
-    grid-area: col3;
-}
-.item4 {
-    grid-row: 2; 
-    grid-column: 1;
-}
-.item5 {
-    grid-row: 2; 
-    grid-column: 3;
+/* Estilo para las imágenes */
+.section_categories .item img {
+    width: 100%;
+    height: auto; 
+    max-width: 350px; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-.item img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    border-radius: 8px;  
-    transition: transform 0.3s ease-in-out; 
+/* Mayor tamaño en Gaming */
+.section_categories .item:nth-child(2) img {
+    max-width: 500px; 
 }
 
-.item img:hover {
-    transform: scale(1.1);
+/* Efecto al pasar el mouse */
+.section_categories .item img:hover {
+    transform: scale(1.1); 
 }
 
+/* Diseño grande con Gaming centrado */
+@media (min-width: 769px) {
+    .section_categories {
+        grid-template-areas: 
+            "item1 item2 item4"
+            "item3 item2 item5";
+    }
 
+    .item:nth-child(1) { grid-area: item1; } 
+    .item:nth-child(2) { 
+        grid-area: item2; 
+        max-width: 500px; 
+    }
+    .item:nth-child(3) { grid-area: item3; } 
+    .item:nth-child(4) { grid-area: item4; } 
+    .item:nth-child(5) { grid-area: item5; } 
+}
+
+/* Ajustes para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+    .section_categories {
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: auto auto auto; 
+        gap: 15px;
+    }
+
+    /* Orden específico para los elementos */
+    .item:nth-child(1) { grid-column: 1; grid-row: 1; } 
+    .item:nth-child(2) { grid-column: 1 / 3; grid-row: 2; } 
+    .item:nth-child(3) { grid-column: 1; grid-row: 3; } 
+    .item:nth-child(4) { grid-column: 2; grid-row: 1; } 
+    .item:nth-child(5) { grid-column: 2; grid-row: 3; } 
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .section_categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: auto auto auto; 
+        gap: 15px;
+    }
+
+    
+    .item:nth-child(1) { 
+        grid-column: 1; 
+        grid-row: 1; 
+        max-width: 200px; 
+    } 
+    .item:nth-child(2) { 
+        grid-column: 1 / 3; 
+        grid-row: 2; 
+        max-width: 350px; 
+    }
+    .item:nth-child(3) { 
+        grid-column: 1; 
+        grid-row: 3; 
+        max-width: 200px;
+    }
+    .item:nth-child(4) { 
+        grid-column: 2; 
+        grid-row: 1; 
+        max-width: 200px;
+    }
+    .item:nth-child(5) { 
+        grid-column: 2; 
+        grid-row: 3; 
+        max-width: 200px;
+    }
+}
 
 /* Seccion Formulario */
 
@@ -262,4 +320,92 @@ input {
 .img_footer{
     width: 1.5rem;
     height: 1.5rem;
+}
+
+
+/* MODO RESPONSIVE*/
+
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    /* Ajuste de imágenes */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Logo */
+    .logo {
+        width: 60vw; 
+    }
+
+    /* Nav Bar */
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav h2 {
+        font-size: 24px;
+    }
+
+    /* Títulos */
+    .title_ofertas {
+        font-size: 6vw;
+    }
+
+    /* Carrusel */
+    .carrusel {
+        margin-top: 2rem;
+    }
+
+    /* Ofertas */
+    .ofertas ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ofertas ul li {
+        width: 90%; 
+    }
+
+    /* Categorías */
+    .section_categories {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 5px;
+        height: auto; 
+    }
+
+    .item img {
+        border-radius: 5px;
+    }
+
+    /* Productos */
+    .contenedor-productos {
+        flex-direction: column;
+    }
+
+    .producto {
+        width: 100%; 
+    }
+
+    /* Formulario */
+    form {
+        width: 90%; 
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer a {
+        margin: 5px 0;
+    }
 }

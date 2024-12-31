@@ -1,0 +1,26 @@
+[
+    {
+        "imagen": "./images/ofertas/8L708UA-ABA_002-300x300.webp",
+        "id": "oferta-1",
+        "title": "Notebook Hp Pavilion 16 Core I7 155u 16gb Ssd 512gb",
+        "price": "450.000"
+    },
+    {
+        "imagen": "./images/ofertas/A1WC3UAABA-Hp-255-G10_01-300x300.webp",
+        "id": "oferta-2",
+        "title": "Notebook Samsung 15.6 Core i7 150u 16gb Ssd 512gb",
+        "price": "450.000"
+    },
+    {
+        "imagen": "./images/ofertas/A3SP2UAABA-HP-PAVILION-16-AF0945_01-300x300.webp",
+        "id": "oferta-3",
+        "title": "Notebook Hp 255 G10 15.6 Ryzen 7 7730u 16gb Ssd 512gb  W11",
+        "price": "450.000"
+    },
+    {
+        "imagen": "./images/ofertas/NP750XGK-KS2US-Galaxy-Book4_01-300x300.webp",
+        "id": "oferta-4",
+        "title": "Notebook Hp 15.6 Core I7 1255u 16gb Ssd 512gb W11",
+        "price": "450.000"
+    }
+]

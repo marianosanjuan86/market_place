@@ -46,6 +46,42 @@ h1 {
     margin: 5px 0;
 }
 
+/* Botones del carrito */
+.carrito-botones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#btn-comprar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#btn-comprar:hover {
+    background-color: #45a049;
+}
+
+#vaciar-carrito {
+    background-color: #f44336;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#vaciar-carrito:hover {
+    background-color: #d32f2f;
+}
+
 .boton-comprar {
     background-color: #007bff;
     color: white;
@@ -106,16 +142,99 @@ h1 {
     border-bottom: 1px solid #ccc;
 }
 
-#vaciar-carrito {
-    background-color: red;
-    color: white;
-    padding: 5px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
+#total {
+    font-weight: bold;
+    color: #000;
 }
 
 #carrito-lista {
     display: block;
 }
+
+/* MODO RESPONSIVE*/
+
+@media (max-width: 768px) {
+    
+    body {
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    
+    .logo {
+        width: 60vw; 
+    }
+
+    
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav h2 {
+        font-size: 24px;
+    }
+
+    
+    .title_ofertas {
+        font-size: 6vw;
+    }
+
+    
+    .carrusel {
+        margin-top: 2rem;
+    }
+
+    
+    .ofertas ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ofertas ul li {
+        width: 90%; 
+    }
+
+    
+    .section_categories {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 5px;
+        height: auto; 
+    }
+
+    .item img {
+        border-radius: 5px;
+    }
+
+    
+    .contenedor-productos {
+        flex-direction: column;
+    }
+
+    .producto {
+        width: 100%; 
+    }
+
+    
+    form {
+        width: 90%; 
+    }
+
+    
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer a {
+        margin: 5px 0;
+    }
+}
+

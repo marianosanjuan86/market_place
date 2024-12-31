@@ -12,7 +12,7 @@
 </head>
 <body>
     <section class="section_title">
-        <img class="logo" src="./images/logo.png" alt="Logo">
+        <a href="index.html"><img class="logo" src="./images/logo.png" alt="Logo"></a>
     </section>
     <nav>
         <div>
@@ -46,63 +46,38 @@
     </div>
 
     <section class="ofertas">
-        <ul>
-            <li>
-                <img src="./images/ofertas/8L708UA-ABA_002-300x300.webp" alt="">
-                <div>
-                    <span class="descripcion-product">Notebook Hp Pavilion 16 Core I7 155u 16gb Ssd 512gb</span>
-                    <span class="price">$450.000</span>
-                    <a href="" class="boton_carrito">COMPRAR</a>
-                </div>
-            </li>
-            <li>
-                <img src="./images/ofertas/A1WC3UAABA-Hp-255-G10_01-300x300.webp" alt="">
-                <div>
-                    <span class="descripcion-product">Notebook Samsung 15.6 Core i7 150u 16gb Ssd 512gb</span>
-                    <span class="price">$450.000</span>
-                    <a href="" class="boton_carrito">COMPRAR</a>
-                </div>
-            </li>
-            <li>
-                <img src="./images/ofertas/A3SP2UAABA-HP-PAVILION-16-AF0945_01-300x300.webp" alt="">
-                <div>
-                    <span class="descripcion-product">Notebook Hp 255 G10 15.6 Ryzen 7 7730u 16gb Ssd 512gb  W11</span>
-                    <span class="price">$450.000</span>
-                    <a href="" class="boton_carrito">COMPRAR</a>
-                </div>
-            </li>
-            <li>
-                <img src="./images/ofertas/NP750XGK-KS2US-Galaxy-Book4_01-300x300.webp" alt="">
-                <div>
-                    <span class="descripcion-product">Notebook Hp 15.6 Core I7 1255u 16gb Ssd 512gb W11</span>
-                    <span class="price">$450.000</span>
-                    <a href="" class="boton_carrito">COMPRAR</a>
-                </div>
-            </li>
-        </ul>
-        
+        <ul id="ofertas-lista"></ul>
     </section>
 
     <section>
         <div class="section_categories">
-            <div class="item item1">
-                <a href="productos.html?categoria=Aires"><img src="./images/seccion_categoria/aires.webp" alt="Aires"></a>
+            <div class="item">
+                <a href="productos.html?categoria=Aires">
+                    <img src="./images/seccion_categoria/aires.webp" alt="Aires">
+                </a>
             </div>
-            <div class="item item2">
-                <a href="productos.html?categoria=Gaming"><img src="./images/seccion_categoria/gaming.webp" alt="Gaming"></a>
+            <div class="item">
+                <a href="productos.html?categoria=Gaming">
+                    <img src="./images/seccion_categoria/gaming.webp" alt="Gaming">
+                </a>
             </div>
-            <div class="item item3">
-                <a href="productos.html?categoria=Electrodomesticos"><img src="./images/seccion_categoria/electrodomesticos.webp" alt="Electrodomésticos"></a>
+            <div class="item">
+                <a href="productos.html?categoria=Electrodomesticos">
+                    <img src="./images/seccion_categoria/electrodomesticos.webp" alt="Electrodomésticos">
+                </a>
             </div>
-            <div class="item item4">
-                <a href="productos.html?categoria=Impresoras"><img src="./images/seccion_categoria/impresoras.webp" alt="Impresoras"></a>
+            <div class="item">
+                <a href="productos.html?categoria=Impresoras">
+                    <img src="./images/seccion_categoria/impresoras.webp" alt="Impresoras">
+                </a>
             </div>
-            <div class="item item5">
-                <a href="productos.html?categoria=Monitores"><img src="./images/seccion_categoria/monitores.webp" alt="Monitores"></a>
+            <div class="item">
+                <a href="productos.html?categoria=Monitores">
+                    <img src="./images/seccion_categoria/monitores.webp" alt="Monitores">
+                </a>
             </div>
         </div>
-    </section>
-    
+    </section>      
 
     <form action="/submit" method="POST">
         <div class="form-group">
@@ -120,12 +95,13 @@
         <button type="submit" class="btn-submit">Enviar</button>
     </form>
 
-    <div id="carrito-mini"></div>
+    <div id="carrito-mini">
         <button id="toggle-carrito">🛒 <span id="carrito-count">0</span></button>
         <div id="carrito-content" class="oculto">
             <h3>Carrito</h3>
             <ul id="carrito-lista"></ul>
-            <p>Total: $<span id="total">0</span></p>
+            <p id="total-container">Total: $<span id="total">0</span></p>
+            <button id="btn-comprar" class="btn-comprar">Comprar</button>
             <button id="vaciar-carrito">Vaciar Carrito</button>
         </div>
     </div>
@@ -144,27 +120,9 @@
         </div>
     </footer>
 
-    
+    <!-- scripts -->
+    <script src="javaScript/index.js"></script>
+    <script src="javaScript/common.js"></script>
 </body>
-<script src="javaScript/productos.js"></script>
-<script>
-    const imagenes = document.querySelector('.imagenes');
-    const totalImagenes = document.querySelectorAll('.imagenes img').length;
-    let indiceActual = 0;
 
-    function actualizarCarrusel() {
-        const desplazamiento = -indiceActual * 100;
-        imagenes.style.transform = `translateX(${desplazamiento}%)`;
-    }
-
-    function siguiente() {
-        indiceActual = (indiceActual + 1) % totalImagenes;
-        actualizarCarrusel();
-    }
-
-    function anterior() {
-        indiceActual = (indiceActual - 1 + totalImagenes) % totalImagenes;
-        actualizarCarrusel();
-    }
-</script>
 </html>
